@@ -6,7 +6,7 @@
 
 // chiediamo all'utente pari o dispari e il suo numero e verifichiamo quello che inserisce
 let oddEvenUser;
-oddEvenUser = prompt("scegli: Pari o Dispari");
+oddEvenUser = parseInt(prompt("scegli: Pari o Dispari"));
 
 if (oddEvenUser == "pari") {
     console.log("hai scelto Pari!");
@@ -36,7 +36,32 @@ function numbComputer (){
  console.log(rndNumber); 
 
 //  sommiamo i due numeri 
+let somma = userChoice + rndNumber;
+console.log(somma);
 
+// stabiliamo se la somma è pari o dispari
+let result = evenOdd (somma);
+
+function evenOdd (somma) {
+    let result;
+    if (somma % 2 == 0) {
+        console.log("il numero è pari");
+        result = "pari"
+    } else {
+        console.log("il numero è dispari");
+        result = "dispari";    
+    }
+    return result;
+}
+
+// dichiariamo il vincitore
+if (result == "pari" && oddEvenUser == "pari") {
+    console.log("hai vinto!");
+} else if (result == "dispari" && oddEvenUser == "dispari") {
+    console.log("hai vinto!");
+} else {
+    console.log("hai perso!");
+}
 
 
 
